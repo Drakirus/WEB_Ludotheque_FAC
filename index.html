@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Ludotheque</title>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/perso.css">
+  <link rel="stylesheet" href="libs/sortable-theme-minimal.css">
+
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="one-half column">
+        <h1>Ludotheque</h1>
+
+      </div>
+      <div class="eleven columns">
+        <p>Ici enfants et leurs parents peuvent réserver des jeux (disponibles) et venir les chercher à un créneau horaire défini. Les jeux sont être triés selon différents critères : âges des enfants, activité calme ou dynamique, jeu individuel ou collectif,
+          etc. </p>
+        <br>
+
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="six columns">
+        <h4>Liste des jeux disponibles</h4>
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>Jeux</th>
+              <th>Age</th>
+              <th>Type</th>
+              <th>Restant</th>
+            </tr>
+          </thead>
+          <tbody id="TABLE"></tbody>
+        </table>
+        <label for="exampleRecipientInput">filtrer par :</label>
+        <select class="u-full-width" onchange="tagCallback(DisplayTab, this.value);">
+          <option value="Nom">Nom</option>
+          <option value="Ages">Ages</option>
+          <option value="NbJeuxDispos">Quantité disponibles</option>
+        </select>
+      </div>
+      <div class="six columns">
+        <h4>Connexion </h4>
+        <form>
+          <div class="row">
+            <div class="six columns">
+              <label for="exampleEmailInput">Votre Email</label>
+              <input class="u-full-width" type="email" placeholder="email@mailbox.com" id="exampleEmailInput">
+            </div>
+
+            <div class="six columns">
+              <label for="exampleEmailInput">Mots de passe</label>
+              <input class="u-full-width" type="password" placeholder="********" id="password">
+            </div>
+            <input class="button-primary" type="submit" value="Connexion !">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    function DisplayTab(result) {
+      // alert(result);
+      var arr = JSON.parse(result);
+      var i;
+      // var out = "<table>";
+      var out = "";
+      for (i = 0; i < arr.length; i++) {
+        out += "<tr><td>" +
+          arr[i].Name +
+          "</td><td>" +
+          "+ " + arr[i].Ages +
+          "</td><td>" +
+          arr[i].Type +
+          "</td><td>" +
+          arr[i].NbJeuxDispos + " / " + arr[i].NbJeux +
+          "</td></tr>";
+      }
+      // out += "</table>";
+      document.getElementById("TABLE").innerHTML = out;
+    }
+
+
+    function tagCallback(theTag, str) {
+
+      console.log('callback executed');
+      var request = new XMLHttpRequest();
+      request.open('GET', "Get_items.php?q=" + str, true);
+      request.onload = function() {
+        if (request.status == 200) {
+          var data = request.responseText;
+          theTag(data);
+
+        }
+      }
+
+      request.send();
+    }
+    var filter = 'Nom';
+
+    tagCallback(DisplayTab, filter);
+  </script>
+</body>
+
+</html>
