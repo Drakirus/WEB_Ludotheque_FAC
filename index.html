@@ -26,10 +26,19 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="one-half column">
+      <div>
         <h1>Ludotheque</h1>
-
       </div>
+	  
+	  <nav>
+	  <ul>
+			<li><a href="#"> Accueil </a></li>
+			<li><a href="#"> Connexion </a></li>
+			<li><a href="#"> Jeux </a></li>
+			<li><a href="#"> A propos </a></li>
+	  </ul>
+	  </nav>
+	  
       <div class="eleven columns">
         <p>Ici enfants et leurs parents peuvent réserver des jeux (disponibles) et venir les chercher à un créneau horaire défini. Les jeux sont être triés selon différents critères : âges des enfants, activité calme ou dynamique, jeu individuel ou collectif,
           etc. </p>
@@ -39,42 +48,46 @@
     </div>
     <div class="row">
 
-      <div class="six columns">
-        <h4>Liste des jeux disponibles</h4>
-        <table class="u-full-width">
-          <thead>
-            <tr>
-              <th>Jeux</th>
-              <th>Age</th>
-              <th>Type</th>
-              <th>Restant</th>
-            </tr>
-          </thead>
-          <tbody id="TABLE"></tbody>
-        </table>
-        <label for="exampleRecipientInput">filtrer par :</label>
-        <select class="u-full-width" onchange="tagCallback(DisplayTab, this.value);">
-          <option value="Nom">Nom</option>
-          <option value="Ages">Ages</option>
-          <option value="NbJeuxDispos">Quantité disponibles</option>
-        </select>
+      <div class="six columns border">
+			<h4>Liste des jeux disponibles</h4>
+			<div class="container-col">
+				<table class="u-full-width">
+				  <thead>
+					<tr>
+					  <th>Jeux</th>
+					  <th>Age</th>
+					  <th>Type</th>
+					  <th>Restant</th>
+					</tr>
+				  </thead>
+				  <tbody id="TABLE"></tbody>
+				</table>
+				<label for="exampleRecipientInput">filtrer par :</label>
+				<select class="u-full-width" onchange="tagCallback(DisplayTab, this.value);">
+				  <option value="Nom">Nom</option>
+				  <option value="Ages">Ages</option>
+				  <option value="NbJeuxDispos">Quantité disponibles</option>
+				</select>
+			</div>
       </div>
-      <div class="six columns">
+      <div class="six columns border">
         <h4>Connexion </h4>
-        <form>
-          <div class="row">
-            <div class="six columns">
-              <label for="exampleEmailInput">Votre Email</label>
-              <input class="u-full-width" type="email" placeholder="email@mailbox.com" id="exampleEmailInput">
-            </div>
+		<div class="container-col">
+			<form>
+			  <div class="row">
+				<div class="six columns">
+				  <label for="exampleEmailInput">Votre Email</label>
+				  <input class="u-full-width" type="email" placeholder="email@mailbox.com" id="exampleEmailInput">
+				</div>
 
-            <div class="six columns">
-              <label for="exampleEmailInput">Mots de passe</label>
-              <input class="u-full-width" type="password" placeholder="********" id="password">
-            </div>
-            <input class="button-primary" type="submit" value="Connexion !">
-          </div>
-        </form>
+				<div class="six columns">
+				  <label for="exampleEmailInput">Mots de passe</label>
+				  <input class="u-full-width" type="password" placeholder="********" id="password">
+				</div>
+				<input class="button-primary" type="submit" value="Connexion !">
+			  </div>
+			</form>
+		</div>
       </div>
     </div>
   </div>

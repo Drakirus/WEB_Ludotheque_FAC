@@ -1,0 +1,61 @@
+html {
+	background-color : #d1eaee;
+}
+
+nav ul {
+    width: 80%;
+    margin: 0px 10%;
+	background-color: rgb(49, 174, 225);
+	height : 47px;
+	border: 2px solid #9BBFC8;
+	outline: 1px solid #000;
+}
+
+nav ul li {
+	list-style : none;
+    float: left;
+    width: 25%;
+    padding: 10px 0px;
+}
+
+nav ul li a {
+    color: white;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+	font-weight : bold;
+	font-size : 18px;
+}
+
+nav ul li a:hover {
+    color : black;
+}
+
+.columns h4 {
+    background-color: rgb(49, 174, 225);
+    color: white;
+    text-align: center;
+} 
+
+.six.columns {
+	background-color : white;
+}
+
+:not(.six.columns > *) {
+	border: 2px solid rgb(155, 191, 200);
+}
+
+.row h1 {
+	text-align : center;
+}
+
+.border{
+    border: 2px solid rgb(155, 191, 200);
+	outline : 1px solid black;
+}
+
+.container-col {
+	width : 80%;
+	margin : 0 10%;
+}
+
