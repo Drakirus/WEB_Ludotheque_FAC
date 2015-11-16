@@ -35,7 +35,7 @@ nav ul li a:hover {
     background-color: rgb(49, 174, 225);
     color: white;
     text-align: center;
-} 
+}
 
 .six.columns {
 	background-color : white;
@@ -59,3 +59,102 @@ nav ul li a:hover {
 	margin : 0 10%;
 }
 
+#alert {
+    position: relative;
+}
+
+#alert:hover:before {
+		color: #cc04c2;
+    border-bottom: 10px solid hsla(0,0%,0%,.8);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    content: '';
+    height: 0;
+    left: 50%;
+    margin-left: -10px;
+    position: absolute;
+    top: 40px;
+    width: 0;
+}
+#alert:hover {
+	color:inherit;
+}
+#alert:target {
+    display: none;
+}
+
+a.alert:hover:after {
+    background: hsla(0,0%,0%,.8);
+    border-radius: 3px;
+    color: #f6f6f6;
+    content: 'Cliquez pour rejeter';
+    font: bold 12px/30px sans-serif;
+    height: 30px;
+    left: 50%;
+    margin-left: -60px;
+    position: absolute;
+    text-align: center;
+    top: 50px;
+    width: 120px;
+}
+a.client:hover:after{
+	background: hsla(0,0%,0%,.8);
+	border-radius: 3px;
+	color: #f6f6f6;
+	content: 'S\'inscrire';
+	font: bold 12px/30px sans-serif;
+	height: 30px;
+	left: 50%;
+	margin-left: -60px;
+	position: absolute;
+	text-align: center;
+	top: 50px;
+	width: 120px;
+}
+.alert {
+    background-color: #c4453c;
+    background-size: 20px 20px;
+    box-shadow: 0 2px 0 hsla(0,0%,0%,.1);
+    color: #f6f6f6;
+    display: block;
+    font: bold 16px/40px sans-serif;
+    height: 40px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top: -45px;
+    width: 100%;
+    -webkit-animation: alert 1s ease forwards;
+       -moz-animation: alert 1s ease forwards;
+        -ms-animation: alert 1s ease forwards;
+         -o-animation: alert 1s ease forwards;
+            animation: alert 1s ease forwards;
+}
+
+/* Animation */
+
+@-webkit-keyframes alert {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 0; }
+}
+@-moz-keyframes alert {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 0; }
+}
+@-ms-keyframes alert {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 0; }
+}
+@-o-keyframes alert {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 0; }
+}
+@keyframes alert {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 0; }
+}
