@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/perso.css">
-  <link rel="stylesheet" href="libs/sortable-theme-minimal.css">
 
 
 
@@ -29,7 +28,7 @@
       <div>
         <h1>Ludotheque</h1>
       </div>
-	  
+
 	  <nav>
 	  <ul>
 			<li><a href="#"> Accueil </a></li>
@@ -38,7 +37,7 @@
 			<li><a href="#"> A propos </a></li>
 	  </ul>
 	  </nav>
-	  
+
       <div class="eleven columns">
         <p>Ici enfants et leurs parents peuvent réserver des jeux (disponibles) et venir les chercher à un créneau horaire défini. Les jeux sont être triés selon différents critères : âges des enfants, activité calme ou dynamique, jeu individuel ou collectif,
           etc. </p>
@@ -60,14 +59,15 @@
 					  <th>Restant</th>
 					</tr>
 				  </thead>
-				  <tbody id="TABLE"></tbody>
-				</table>
-				<label for="exampleRecipientInput">filtrer par :</label>
-				<select class="u-full-width" onchange="tagCallback(DisplayTab, this.value);">
-				  <option value="Nom">Nom</option>
-				  <option value="Ages">Ages</option>
-				  <option value="NbJeuxDispos">Quantité disponibles</option>
-				</select>
+          <tbody id="TABLE"></tbody>
+        </table>
+        <label for="exampleRecipientInput">filtrer par :</label>
+        <select id="select" class="u-full-width" onchange="update()">
+          <option value="Nom">Nom</option>
+          <option value="Ages">Ages</option>
+          <option value="NbJeuxDispos">Quantité disponibles</option>
+        </select>
+        <input type="checkbox" id="order" onchange="update()"> décroissante</input>
 			</div>
       </div>
       <div class="six columns border">
@@ -117,11 +117,11 @@
     }
 
 
-    function tagCallback(theTag, str) {
+    function tagCallback(theTag, str, order) {
 
       console.log('callback executed');
       var request = new XMLHttpRequest();
-      request.open('GET', "Get_items.php?q=" + str, true);
+      request.open('GET', "Get_items.php?q=" + str + "&order=" + order, true);
       request.onload = function() {
         if (request.status == 200) {
           var data = request.responseText;
@@ -133,8 +133,21 @@
       request.send();
     }
     var filter = 'Nom';
+    var order = ''
+    tagCallback(DisplayTab, filter, order);
 
-    tagCallback(DisplayTab, filter);
+
+    function update() {
+      if (document.getElementById('order').checked) {
+        var order = 'DESC'
+        tagCallback(DisplayTab, document.getElementById('select').value, order);
+      } else {
+        var order = ''
+        tagCallback(DisplayTab, document.getElementById('select').value, order);
+      }
+    }
+
+
   </script>
 </body>
 

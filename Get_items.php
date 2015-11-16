@@ -1,5 +1,6 @@
 <?php
   $q=$_GET["q"];
+  $o=$_GET["order"];
   // on se connecte à MySQL
   $db = mysqli_connect('localhost', 'root', 'root', "Ludotheque_BD");
   // mysqli_query("SET NAMES UTF8");
@@ -7,8 +8,8 @@
   // on sélectionne la base
 
   // on crée la requête SQL
-//  $sql = 'SELECT Nom,Ages,Type_jeux FROM Jeux';
-$sql = 'SELECT Nom,Ages,Type_jeux,NbJeux,NbJeuxDispos FROM Jeux NATURAL JOIN Jeux_Ludotheque ORDER  by  '.$q.' ';
+  //  $sql = 'SELECT Nom,Ages,Type_jeux FROM Jeux';
+  $sql = 'SELECT Nom,Ages,Type_jeux,NbJeux,NbJeuxDispos FROM Jeux NATURAL JOIN Jeux_Ludotheque ORDER  by  '.$q.' '.$o.'';
   // on envoie la requête
   $req = mysqli_query(  $db, $sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysqli_error());
 
