@@ -14,7 +14,7 @@ function debut_session($id, $nom) {
 
       $db = mysqli_connect('localhost', 'root', 'root', "Ludotheque_BD");
       header("Content-Type: application/json; charset=UTF-8");
-      $sql = "SELECT * FROM members WHERE users='" . $_POST["login"] . "' and password = '". $_POST["password"]."'";
+      $sql = "SELECT * FROM members WHERE email='" . $_POST["login"] . "' and password = '". $_POST["password"]."'";
       $req = mysqli_query($db, $sql) or die("Erreur SQL !<br>".$sql."<br>".mysqli_error($db));
 
       $data  = mysqli_fetch_assoc($req);
@@ -24,10 +24,12 @@ function debut_session($id, $nom) {
               header("Location:user_dashboard.php");
               // echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
       } else {
-              echo "<a  id=\"alert\" class=\"alert client\" href=\"./register.php\">Vous devez être client pour vous connecté</a>";
+              echo "<a  id=\"alert\" class=\"alert client\" href=\"./register.html\">Devenez client</a>";
       }
+        mysqli_close($db);
     } else {
-        echo "<a  id=\"alert\" class=\"alert\" href=\"#alert\">Formulaire de connection incomplet</a>";
+        echo "<a  id=\"alert\" class=\"alert\" href=\"#alert\">Formulaire incomplet</a>";
     }
+
 
 ?>

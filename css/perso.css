@@ -37,7 +37,10 @@ nav ul li a:hover {
     text-align: center;
 }
 
-.six.columns {
+.eleven.columns {
+	background-color : #d1eaee;
+}
+.columns {
 	background-color : white;
 }
 
@@ -58,24 +61,16 @@ nav ul li a:hover {
 	width : 80%;
 	margin : 0 10%;
 }
+/* Cache le panier quand l'utilisateur n'est pas connecter*/
+#logged-title{display:none;}
+
+
+/* Style pour l'alerte en cas d'erreur lors du login*/
 
 #alert {
     position: relative;
 }
 
-#alert:hover:before {
-		color: #cc04c2;
-    border-bottom: 10px solid hsla(0,0%,0%,.8);
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    content: '';
-    height: 0;
-    left: 50%;
-    margin-left: -10px;
-    position: absolute;
-    top: 40px;
-    width: 0;
-}
 #alert:hover {
 	color:inherit;
 }
@@ -83,20 +78,6 @@ nav ul li a:hover {
     display: none;
 }
 
-a.alert:hover:after {
-    background: hsla(0,0%,0%,.8);
-    border-radius: 3px;
-    color: #f6f6f6;
-    content: 'Cliquez pour rejeter';
-    font: bold 12px/30px sans-serif;
-    height: 30px;
-    left: 50%;
-    margin-left: -60px;
-    position: absolute;
-    text-align: center;
-    top: 50px;
-    width: 120px;
-}
 a.client:hover:after{
 	background: hsla(0,0%,0%,.8);
 	border-radius: 3px;
@@ -111,6 +92,7 @@ a.client:hover:after{
 	top: 50px;
 	width: 120px;
 }
+
 .alert {
     background-color: #c4453c;
     background-size: 20px 20px;
@@ -131,7 +113,10 @@ a.client:hover:after{
             animation: alert 1s ease forwards;
 }
 
-/* Animation */
+.ok {
+	background-color: #28c67a;
+}
+/* Animation pop down for the alert*/
 
 @-webkit-keyframes alert {
     0% { opacity: 0; }

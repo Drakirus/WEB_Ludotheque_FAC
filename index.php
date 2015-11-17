@@ -35,23 +35,23 @@
 
       <nav>
         <ul>
-          <li><a href="#"> Accueil </a></li>
-          <li><a href="#"> Connexion </a></li>
-          <li><a href="#"> Jeux </a></li>
+          <li><a href="./index.php"> Accueil </a></li>
+          <li><a href="./register.html"> S'inscrire </a></li>
           <li><a href="#"> A propos </a></li>
+          <li><a href="https://github.com/Drakirus/WEB_Ludotheque_FAC"> Github </a></li>
         </ul>
       </nav>
 
       <div class="eleven columns">
+        <br/>
         <p>Ici enfants et leurs parents peuvent réserver des jeux (disponibles) et venir les chercher à un créneau horaire défini. Les jeux sont être triés selon différents critères : âges des enfants, activité calme ou dynamique, jeu individuel ou collectif,
           etc. </p>
-        <br>
 
       </div>
     </div>
     <div class="row">
 
-      <div class="six columns border">
+      <div class="eight columns border">
         <h4>Liste des jeux disponibles</h4>
         <div class="container-col">
           <table class="u-full-width">
@@ -74,8 +74,9 @@
           <input type="checkbox" id="order" onchange="update()"> décroissante</input>
         </div>
       </div>
-      <div class="six columns border">
-        <h4>Connexion </h4>
+      <div class="four columns border">
+        <h4 id="form-title" >Connexion </h4>
+        <h4 id="logged-title" >Jeux Réserver</h4>
 
         <div class="container-col">
           <?php
@@ -88,7 +89,7 @@
 
               <div class="six columns">
                 <label>Identifiant</label>
-                <input class="u-full-width" type="text"  placeholder="Utilisateur" id="login" name="login" />
+                <input class="u-full-width" type="email"  placeholder="Utilisateur" id="login" name="login" />
               </div>
               <div class="six columns">
                 <label>Mot de passe</label>
@@ -177,8 +178,6 @@
 
       xhr.open("POST", "./verification_connexion.php", true);
       xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=iso-8859-1");
-      login = document.connexion.login.value;
-      password = document.connexion.password.value;
       xhr.send("login=" + escape(login) + "&password=" + escape(password));
     }
   </script>
