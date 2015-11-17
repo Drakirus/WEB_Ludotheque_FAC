@@ -23,19 +23,7 @@
 <body>
   <div class="container">
     <div class="row">
-      <div>
-        <h1>Ludotheque</h1>
-      </div>
-
-      <nav>
-        <ul>
-          <li><a href="./index.php"> Accueil </a></li>
-          <li><a href="./register.html"> S'inscrire </a></li>
-          <li><a href="#"> A propos </a></li>
-          <li><a href="https://github.com/Drakirus/WEB_Ludotheque_FAC"> Github </a></li>
-        </ul>
-      </nav>
-
+      <?php  include './header.php';?>
       <div class="eleven columns">
         <br/>
         <p>Pour accéder au service de réservation, il faut vous créer un compte </p>

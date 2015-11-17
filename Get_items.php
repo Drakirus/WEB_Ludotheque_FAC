@@ -1,17 +1,13 @@
 <?php
-  $q=$_GET["q"];
+  require('./modele\gestion_bdd.php');
+
+  $q=$_GET["q"]; // recupération des paramètres (GET)
   $o=$_GET["order"];
-  // on se connecte à MySQL
-  $db = mysqli_connect('localhost', 'root', 'root', "Ludotheque_BD");
-  // mysqli_query("SET NAMES UTF8");
-  header("Content-Type: application/json; charset=UTF-8");
-  // on sélectionne la base
 
   // on crée la requête SQL
-  //  $sql = 'SELECT Nom,Ages,Type_jeux FROM Jeux';
   $sql = 'SELECT Nom,Ages,Type_jeux,NbJeux,NbJeuxDispos FROM Jeux NATURAL JOIN Jeux_Ludotheque ORDER  by  '.$q.' '.$o.'';
   // on envoie la requête
-  $req = mysqli_query(  $db, $sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysqli_error());
+  $req = requete_bdd_select($sql);
 
   $outp = "[";
   // on fait une boucle qui va faire un tour pour chaque enregistrement
@@ -29,9 +25,6 @@
   }
 
   $outp .="]";
-  echo($outp);
-
-  // on ferme la connexion à mysql
-  mysqli_close($db);
+  echo($outp); // on envoie un ficher json que le javascript vas afficher
 
 ?>

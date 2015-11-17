@@ -29,19 +29,7 @@
 <body>
   <div class="container">
     <div class="row">
-      <div>
-        <h1>Ludotheque</h1>
-      </div>
-
-      <nav>
-        <ul>
-          <li><a href="./index.php"> Accueil </a></li>
-          <li><a href="./register.html"> S'inscrire </a></li>
-          <li><a href="#"> A propos </a></li>
-          <li><a href="https://github.com/Drakirus/WEB_Ludotheque_FAC"> Github </a></li>
-        </ul>
-      </nav>
-
+        <?php  include './header.php';?>
       <div class="eleven columns">
         <br/>
         <p>Ici enfants et leurs parents peuvent réserver des jeux (disponibles) et venir les chercher à un créneau horaire défini. Les jeux sont être triés selon différents critères : âges des enfants, activité calme ou dynamique, jeu individuel ou collectif,

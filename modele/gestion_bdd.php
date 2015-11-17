@@ -1,0 +1,26 @@
+<?php
+function requete_bdd_select($sql){
+
+  // on se connecte à MySQL
+  $db = mysqli_connect('localhost', 'root', 'root', "Ludotheque_BD");
+  // mysqli_query("SET NAMES UTF8");
+  header("Content-Type: application/json; charset=UTF-8");
+  // on sélectionne la base
+
+  // on envoie la requête
+  $req = mysqli_query(  $db, $sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysqli_error());
+
+  // on ferme la connexion à mysql
+  mysqli_close($db);
+
+  return $req;
+}
+
+function debut_session($id, $nom) {
+        session_start();
+        $_SESSION['id_client'] = $id;
+        $_SESSION['nom_client'] = $nom;
+        $_SESSION['marker'] = true;
+}
+
+ ?>

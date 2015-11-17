@@ -43,7 +43,6 @@
       $sql="SELECT email FROM members WHERE email='$email'";
   		$result=mysqli_query($db,$sql);
 
-      $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
       if(mysqli_num_rows($result) == 1){
         echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Désolé ... Cette email est déjà utilisé...</a>";
       }else{
