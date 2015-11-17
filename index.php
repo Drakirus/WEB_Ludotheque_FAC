@@ -88,7 +88,7 @@
             <form action="" name="connexion" method="post" enctype="multipart/form-data">
 
               <div class="six columns">
-                <label>Identifiant</label>
+                <label>Email</label>
                 <input class="u-full-width" type="email"  placeholder="Utilisateur" id="login" name="login" />
               </div>
               <div class="six columns">
