@@ -1,7 +1,9 @@
 html {
 	background-color : #d1eaee;
 }
-
+/* -------------------------------------------------*/
+/* Style pour la barre de navigation*/
+/* -------------------------------------------------*/
 nav ul {
     width: 80%;
     margin: 0px 10%;
@@ -11,13 +13,19 @@ nav ul {
 	outline: 1px solid #000;
 }
 
+/* --------------------------------------------------------*/
+/* Place les éléments de la barre de navigation*/
+/* --------------------------------------------------------*/
 nav ul li {
 	list-style : none;
     float: left;
-    width: 25%;
+    width: 33%;
     padding: 10px 0px;
 }
 
+/* -------------------------------------------------------*/
+/* Caractéristiques des éléments de la barre de navigation*/
+/* -------------------------------------------------------*/
 nav ul li a {
     color: white;
     text-align: center;
@@ -27,43 +35,70 @@ nav ul li a {
 	font-size : 18px;
 }
 
+/* -----------------------------------------------------*/
+/* Permet de changer la couleur d'un élément de la barre*/ 
+/* de navigation lorsque que l'on passe la souris dessus*/
+/* -----------------------------------------------------*/
 nav ul li a:hover {
     color : black;
 }
 
+/* -------------------------------------------------------*/
+/* Caractéristiques des titres des différents blocs */
+/* -------------------------------------------------------*/
 .columns h4 {
     background-color: rgb(49, 174, 225);
     color: white;
     text-align: center;
 }
 
+/* -------------------------------------------------------*/
+/* Uniformise avec la couleur de fond */
+/* -------------------------------------------------------*/
 .eleven.columns {
 	background-color : #d1eaee;
 }
+
+/* -------------------------------------------------------*/
+/* Uniformise avec la couleur de fond */
+/* -------------------------------------------------------*/
+.twelve.columns {
+	text-align : center;
+}
+
+/* -------------------------------------------------------*/
+/* Definit la couleur du contenu des blocs à blanc */
+/* -------------------------------------------------------*/
 .columns {
 	background-color : white;
 }
 
-:not(.six.columns > *) {
-	border: 2px solid rgb(155, 191, 200);
-}
-
+/* -------------------------------------------------------*/
+/* Place le titre du header au centre de la page */
+/* -------------------------------------------------------*/
 .row h1 {
 	text-align : center;
 }
 
+/* -------------------------------------------------------*/
+/* Ajoute de fines bordures noirs aux blocs */
+/* -------------------------------------------------------*/
 .border{
     border: 2px solid rgb(155, 191, 200);
 	outline : 1px solid black;
 }
 
+/* -------------------------------------------------------*/
+/* Permet de limiter le contenu des blocs pour pas qu'il  */
+/* soit collé aux bordures                                */
+/* -------------------------------------------------------*/
 .container-col {
 	width : 80%;
 	margin : 0 10%;
 }
-/* -------------------------------------------------*/
-/* Cache le panier quand l'utilisateur n'est pas connecter*/
-/* -------------------------------------------------*/
+/* -------------------------------------------------------*/
+/* Cache le panier quand l'utilisateur n'est pas connecté */
+/* -------------------------------------------------------*/
 #logged-title{display:none;}
 
 /* -------------------------------------------------*/

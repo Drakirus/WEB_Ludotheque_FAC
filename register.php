@@ -34,7 +34,7 @@
 
       <div class="twelve columns border">
         <h4 id="form-title">Inscription </h4>
-        <h4 id="logged-title">Jeux Réserver</h4>
+        <h4 id="logged-title">Jeux Réservé</h4>
 
         <div class="container-col">
 
