@@ -3,12 +3,13 @@
 
   $q=$_GET["q"]; // recupération des paramètres (GET)
   $o=$_GET["order"];
+  $r=$_GET["recherche"];
 
   // on crée la requête SQL
-  $sql = 'SELECT Nom,Ages,Type_jeux,NbJeux,NbJeuxDispos FROM Jeux NATURAL JOIN Jeux_Ludotheque ORDER  by  '.$q.' '.$o.'';
+  $sql = 'SELECT Nom,Ages,Type_jeux,NbJeux,NbJeuxDispos FROM Jeux NATURAL JOIN Jeux_Ludotheque WHERE '.$q.' LIKE \''.$r.'%\' ORDER  by  '.$q.' '.$o.'';
   // on envoie la requête
   $req = requete_bdd_select($sql);
-
+  // echo $sql;
   $outp = "[";
   // on fait une boucle qui va faire un tour pour chaque enregistrement
   while($data = mysqli_fetch_assoc($req)){

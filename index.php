@@ -54,13 +54,17 @@
             </thead>
             <tbody id="TABLE"></tbody>
           </table>
-          <label for="exampleRecipientInput">filtrer par :</label>
+          <label for="exampleRecipientInput">Recherche :</label>
+          <input class="u-full-width" type="text"  id="recherche" placeholder="Recherche" name="find" onkeyup="update()" />
+
+          <label for="exampleRecipientInput">Filtrer par :</label>
           <select id="select" class="u-full-width" onchange="update()">
-            <option value="Nom">Nom</option>
+            <option value="Nom">Nom du jeux</option>
             <option value="Ages">Ages</option>
+            <option value="Type_jeux">Type de jeux</option>
             <option value="NbJeuxDispos">Quantité disponibles</option>
           </select>
-          <input type="checkbox" id="order" onchange="update()"> décroissante</input>
+          <input type="checkbox" id="order" onchange="update()">  Décroissante</input>
         </div>
       </div>
       <div class="four columns border">
@@ -116,18 +120,21 @@
           arr[i].Type +
           "</td><td>" +
           arr[i].NbJeuxDispos + " / " + arr[i].NbJeux +
-          "</td></tr>";
+          "</td> <td> <input type='button' name='" + arr[i].Name + "' value='Réserver' onclick='reserver(name);' /> </td> </tr>";
       }
       // out += "</table>";
       document.getElementById("TABLE").innerHTML = out;
     }
 
+    function reserver(Name){
+      console.log(Name);
+    }
 
-    function tagCallback(theTag, str, order) {
+    function RechercheItems(theTag, str, order, recherche) {
 
-      console.log('callback executed');
+      console.log(recherche);
       var request = new XMLHttpRequest();
-      request.open('GET', "Get_items.php?q=" + str + "&order=" + order, true);
+      request.open('GET', "Get_items_recherche.php?q=" + str + "&order=" + order + "&recherche=" + recherche, true);
       request.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=iso-8859-1");
       request.onload = function() {
         if (request.status == 200) {
@@ -140,18 +147,19 @@
       request.send();
     }
 
+
     var filter = 'Nom';
     var order = ''
-    tagCallback(DisplayTab, filter, order);
+    RechercheItems(DisplayTab, filter, order, "");
 
 
     function update() {
       if (document.getElementById('order').checked) {
         var order = 'DESC'
-        tagCallback(DisplayTab, document.getElementById('select').value, order);
+        RechercheItems(DisplayTab, document.getElementById('select').value, order, document.getElementById('recherche').value);
       } else {
         var order = ''
-        tagCallback(DisplayTab, document.getElementById('select').value, order);
+        RechercheItems(DisplayTab, document.getElementById('select').value, order, document.getElementById('recherche').value);
       }
     }
 
