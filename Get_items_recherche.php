@@ -26,6 +26,6 @@
   }
 
   $outp .="]";
-  echo($outp); // on envoie un ficher json que le javascript vas afficher
+  echo($outp); // on envoie un ficher json que le javascript va afficher
 
 ?>

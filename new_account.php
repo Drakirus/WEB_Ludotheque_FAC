@@ -17,14 +17,14 @@
     $false = 0;
 
     /*
-    * Affichage d'erreur si les variables ne corresponde pas à un contenus
+    * Affichage d'erreur si les variables ne correspondent pas à un contenus
     */
     if(!$pattern_email) {
       echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Adresse mail non valide</a> </br>";
       $false = 1;
     }
 
-    if(strlen($password) < 6) { // le mot de passe doit étre au minimum de 6
+    if(strlen($password) < 6) { // le mot de passe doit être au minimum de 6 caractères
       echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Le mots de passe doit être au minimum de 6 caractères</a> </br>";
       $false = 1;
     }

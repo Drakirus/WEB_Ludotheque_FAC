@@ -33,7 +33,7 @@
         <?php  include './header.php';?>
       <div class="eleven columns">
         <br/>
-        <p>Ici enfants et leurs parents peuvent réserver des jeux (disponibles) et venir les chercher à un créneau horaire défini. Les jeux sont être triés selon différents critères : âges des enfants, activité calme ou dynamique, jeu individuel ou collectif,
+        <p>Ici enfants et leurs parents peuvent réserver des jeux (disponibles) et venir les chercher à un créneau horaire défini. Les jeux sont triés selon différents critères : âges des enfants, activité calme ou dynamique, jeu individuel ou collectif,
           etc. </p>
 
       </div>
@@ -69,7 +69,7 @@
       </div>
       <div class="four columns border">
         <h4 id="form-title" >Connexion </h4>
-        <h4 id="logged-title" >Jeux Réserver</h4>
+        <h4 id="logged-title" >Jeux Réservé</h4>
 
         <div class="container-col">
           <?php
