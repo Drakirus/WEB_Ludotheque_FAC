@@ -1,7 +1,8 @@
 <?php
   if(!isset($_SESSION)){
         session_start();
-    }?>
+    }
+    ?>
 <!DOCTYPE html>
 <html>
 
@@ -110,7 +111,7 @@
         out += "<tr><td>" +
           arr[i].Name +
           "</td><td>" +
-          "+ " + arr[i].Ages +
+           arr[i].Ages + "+ " +
           "</td><td>" +
           arr[i].Type +
           "</td><td>" +

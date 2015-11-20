@@ -61,12 +61,14 @@ nav ul li a:hover {
 	width : 80%;
 	margin : 0 10%;
 }
+/* -------------------------------------------------*/
 /* Cache le panier quand l'utilisateur n'est pas connecter*/
+/* -------------------------------------------------*/
 #logged-title{display:none;}
 
-
+/* -------------------------------------------------*/
 /* Style pour l'alerte en cas d'erreur lors du login*/
-
+/* -------------------------------------------------*/
 #alert {
     position: relative;
 }
@@ -89,7 +91,7 @@ a.client:hover:after{
 	margin-left: -60px;
 	position: absolute;
 	text-align: center;
-	top: 50px;
+	top: -40px;
 	width: 120px;
 }
 
@@ -116,7 +118,9 @@ a.client:hover:after{
 .ok {
 	background-color: #28c67a;
 }
-/* Animation pop down for the alert*/
+/* -------------------------------------------------*/
+/* Animation pop down pour alert*/
+/* -------------------------------------------------*/
 
 @-webkit-keyframes alert {
     0% { opacity: 0; }

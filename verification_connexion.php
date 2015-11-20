@@ -20,7 +20,7 @@
       } else {
               echo "<a  id=\"alert\" class=\"alert client\" href=\"./register.php\">Devenez client</a>";
       }
-    } else {
+    } else {                   // affichage des erreurs si le client n'existe pas où si le form est incomplet
         echo "<a  id=\"alert\" class=\"alert\" href=\"#alert\">Formulaire incomplet</a>";
     }
 

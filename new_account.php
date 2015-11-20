@@ -1,41 +1,49 @@
 <?php
 
-
+    /*
+    * vérification des différentes variables post ( gestion du isset)
+    */
     $login = isset($_POST['login']) ? $_POST['login'] : '';
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
     $password_bis = isset($_POST['password_bis']) ? $_POST['password_bis'] : '';
 
+    /*
+    * vérification du contenu des variables poster
+    */
     $uppercase = preg_match('@[A-Z]@', $password);
     $number    = preg_match('@[0-9]@', $password);
     $pattern_email =  preg_match('/^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/', $email);
     $false = 0;
 
+    /*
+    * Affichage d'erreur si les variables ne corresponde pas à un contenus
+    */
     if(!$pattern_email) {
       echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Adresse mail non valide</a> </br>";
       $false = 1;
     }
 
-    if(strlen($password) < 6) {
+    if(strlen($password) < 6) { // le mot de passe doit étre au minimum de 6
       echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Le mots de passe doit être au minimum de 6 caractères</a> </br>";
       $false = 1;
     }
-    if(!$number) {
+    if(!$number) { // le mot de passe doit contenir au minimum un chiffre
       echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Le mots de passe doit être au minimum un chiffre</a> </br>";
       $false = 1;
     }
-    if(!$uppercase) {
+    if(!$uppercase) { // le mot de passe doit contenir au minimum une lettre majuscule
       echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Le mots de passe avoir des majuscule </a> </br>";
       $false = 1;
     }
-    if ($false){
+    if ($false){ // Si l'une des différentes erreur c'est produit le script -> return
       die();
     }
-    if ($password != $password_bis) {
+    if ($password != $password_bis) { // Si les 2 mots de passe sont différents -> return
       die("<a  id=\"alert\" class=\"alert\" href=\"#alert\"> Les mots de passe saisis sont différents. veuillez réessayer</a> </br>");
     }
 
-    if ( ($login != '')) {
+    if ( ($login != '')) { // verification si le nom d'utilisateur à été reseigner
 
       $db = mysqli_connect('localhost', 'root', 'root', "Ludotheque_BD");
       header("Content-Type: application/json; charset=UTF-8");
@@ -53,7 +61,7 @@
       }
       mysqli_close($db);
 
-    } else {
+    } else {  //alert
         echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Besoin d'un Nom d'Utilisateur</a>";
     }
 

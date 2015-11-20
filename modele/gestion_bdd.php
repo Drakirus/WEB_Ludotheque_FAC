@@ -4,7 +4,6 @@ function requete_bdd_select($sql){
   // on se connecte à MySQL
   $db = mysqli_connect('localhost', 'root', 'root', "Ludotheque_BD");
   // mysqli_query("SET NAMES UTF8");
-  header("Content-Type: application/json; charset=UTF-8");
   // on sélectionne la base
 
   // on envoie la requête
