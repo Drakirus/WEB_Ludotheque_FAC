@@ -55,7 +55,7 @@
             <tbody id="TABLE"></tbody>
           </table>
           <label for="exampleRecipientInput">Recherche :</label>
-          <input class="u-full-width" type="text"  id="recherche" placeholder="Recherche" name="find" onkeyup="update()" />
+          <input class="u-full-width" type="search"  id="recherche" placeholder="Recherche" name="find" onkeyup="update()" />
 
           <label for="exampleRecipientInput">Filtrer par :</label>
           <select id="select" class="u-full-width" onchange="update()">
@@ -92,10 +92,13 @@
               <input type="button" name="submit" value="Envoyer" onclick="verification(login.value, password.value);" />
             </form>
           </div>
-          <?php }else{
-            //header("Location:user_dashboard.php");
-            include './user_dashboard.php';
-          } ?>
+          <div id="user_dashboard">
+            <?php }else{
+              //header("Location:user_dashboard.php");
+              echo "<div id='user_dashboard'>";
+              include './user_dashboard.php';
+            } ?>
+          </div>
           <div id="message"></div>
           <br/>
         </div>
@@ -120,14 +123,42 @@
           arr[i].Type +
           "</td><td>" +
           arr[i].NbJeuxDispos + " / " + arr[i].NbJeux +
-          "</td> <td> <input type='button' name='" + arr[i].Name + "' value='Réserver' onclick='reserver(name);' /> </td> </tr>";
+          "</td> <td> <input id='logged-reserver' type='button' name='" + arr[i].Name + "' value='Réserver' onclick='reserver(name);' /> </td> </tr>";
       }
       // out += "</table>";
       document.getElementById("TABLE").innerHTML = out;
     }
+    function update_user_dashboard(){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            reponse = xhr.responseText;
+            document.getElementById('user_dashboard').innerHTML = reponse;
+          }
+        }
+
+      xhr.open("POST", "./user_dashboard.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=iso-8859-1");
+      xhr.send();
+    }
 
     function reserver(Name){
       console.log(Name);
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          reponse = xhr.responseText;
+          if(reponse == "ok"){
+            update_user_dashboard();
+          }else{
+          document.getElementById('message').innerHTML = reponse;
+          }
+        }
+      }
+
+      xhr.open("POST", "./new_emprunt.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=iso-8859-1");
+      xhr.send("item=" + escape(Name));
     }
 
     function RechercheItems(theTag, str, order, recherche) {
@@ -169,7 +200,7 @@
       xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
           reponse = xhr.responseText;
-          document.getElementById('message').innerHTML = reponse;
+          document.getElementById('user_dashboard').innerHTML = reponse;
         }
       }
 

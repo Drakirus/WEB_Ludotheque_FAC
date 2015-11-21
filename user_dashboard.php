@@ -3,10 +3,9 @@ if(!isset($_SESSION)){
         session_start(); // Ouverture la session si elle n'est pas ouverte
 }
 require('./modele\gestion_bdd.php');
-
 ?>
 <!-- affichage dynamique de la position dans le menu de droite de l'avancement de l'utilisateur  -->
-<style type="text/css">#form{display:none;}#form-title{display:none;}#logged-title{display: block;}</style>
+<style type="text/css">#form{display:none;}#form-title{display:none;}#logged-title{display: block;}#logged-reserver{display: block;}</style>
 
 
 <!-- Creation d'une table contenant les information propre à l'utilisateur qui vient de ce connecter  -->

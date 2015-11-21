@@ -61,7 +61,7 @@
                 </div>
 
               </div>
-            <input type="button" name="submit" value="Envoyer" onclick="register(login.value, email.value, password.value, password_bis.value);" />
+            <input type="button" name="submit" value="Envoyer" onclick="upload(login.value, email.value, password.value, password_bis.value);" />
             </div>
           </form>
           <div id="message"></div>
@@ -71,7 +71,7 @@
     </div>
   </div>
 <script type="text/javascript">
-function register(login, email, password, password_bis) {
+function upload(login, email, password, password_bis) {
   // alert (login + ' ' +  email + ' ' +  password + ' ' +  password_bis);
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {

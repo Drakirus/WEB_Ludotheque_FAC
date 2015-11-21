@@ -36,7 +36,7 @@ nav ul li a {
 }
 
 /* -----------------------------------------------------*/
-/* Permet de changer la couleur d'un élément de la barre*/ 
+/* Permet de changer la couleur d'un élément de la barre*/
 /* de navigation lorsque que l'on passe la souris dessus*/
 /* -----------------------------------------------------*/
 nav ul li a:hover {
@@ -62,7 +62,7 @@ nav ul li a:hover {
 /* -------------------------------------------------------*/
 /* Uniformise avec la couleur de fond */
 /* -------------------------------------------------------*/
-.twelve.columns {
+.twelve.columns p{
 	text-align : center;
 }
 
@@ -100,6 +100,7 @@ nav ul li a:hover {
 /* Cache le panier quand l'utilisateur n'est pas connecté */
 /* -------------------------------------------------------*/
 #logged-title{display:none;}
+#logged-reserver{display:none;}
 
 /* -------------------------------------------------*/
 /* Style pour l'alerte en cas d'erreur lors du login*/
@@ -137,7 +138,8 @@ a.client:hover:after{
     color: #f6f6f6;
     display: block;
     font: bold 16px/40px sans-serif;
-    height: 40px;
+		line-height: 30px;
+    height: auto;
     position: absolute;
     text-align: center;
     text-decoration: none;
