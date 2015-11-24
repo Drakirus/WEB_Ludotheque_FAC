@@ -17,12 +17,12 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
+
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/perso.css">
-
 
 
 </head>
@@ -43,18 +43,8 @@
       <div class="eight columns border">
         <h4>Liste des jeux disponibles</h4>
         <div class="container-col">
-          <table class="u-full-width">
-            <thead>
-              <tr>
-                <th>Jeux</th>
-                <th>Age</th>
-                <th>Type</th>
-                <th>Restant</th>
-              </tr>
-            </thead>
-            <tbody id="TABLE"></tbody>
-          </table>
-          <label for="exampleRecipientInput">Recherche :</label>
+
+          <label for="exampleRecipientInput">Recherche : (En fonction du filtre)</label>
           <input class="u-full-width" type="search"  id="recherche" placeholder="Recherche" name="find" onkeyup="update()" />
 
           <label for="exampleRecipientInput">Filtrer par :</label>
@@ -65,6 +55,21 @@
             <option value="NbJeuxDispos">Quantité disponibles</option>
           </select>
           <input type="checkbox" id="order" onchange="update()">  Décroissante</input>
+
+          <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>Jeux</th>
+                <th>Age</th>
+                <th>Type</th>
+                <th>Restant</th>
+                <th class='logged-reserver' >Réservez</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="TABLE"></tbody>
+          </table>
+
         </div>
       </div>
       <div class="four columns border">
@@ -106,7 +111,7 @@
     </div>
   </div>
 
-
+  <script language="javascript" type="text/javascript" src="./controleur\datetimepicker.js">  </script>
   <script>
     function DisplayTab(result) {
       // alert(result);
@@ -123,7 +128,13 @@
           arr[i].Type +
           "</td><td>" +
           arr[i].NbJeuxDispos + " / " + arr[i].NbJeux +
-          "</td> <td> <input id='logged-reserver' type='button' name='" + arr[i].Name + "' value='Réserver' onclick='reserver(name);' /> </td> </tr>";
+
+          "</td> <td>" +
+          "<a class='logged-reserver' href=\"javascript:NewCal('"+ i+
+          "','ddmmyyyy',true,24)\"> <input class='date' value='Date' id='" +
+          i+
+          "' type='text'></a>" +
+          "</td><td><button class='logged-reserver' href='' name='" + arr[i].Name + "' onclick='reserver(name,"+i+")'> Réservez </button </td> </tr>";
       }
       // out += "</table>";
       document.getElementById("TABLE").innerHTML = out;
@@ -142,14 +153,22 @@
       xhr.send();
     }
 
-    function reserver(Name){
+    function reserver(Name, dateID){
       console.log(Name);
+      var x=document.getElementById(dateID).value;
+      if (x == "Date") {
+        var alertMsg = "<a  id=\"alert\" class=\"alert\" href=\"#\">date non définie</a>"
+        document.getElementById('message').innerHTML = alertMsg;
+        return;
+      }
+      // alert(x);
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
           reponse = xhr.responseText;
           if(reponse == "ok"){
             update_user_dashboard();
+            update();
           }else{
           document.getElementById('message').innerHTML = reponse;
           }
@@ -158,7 +177,7 @@
 
       xhr.open("POST", "./new_emprunt.php", true);
       xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=iso-8859-1");
-      xhr.send("item=" + escape(Name));
+      xhr.send("item=" + escape(Name)+ "&date=" + x);
     }
 
     function RechercheItems(theTag, str, order, recherche) {
@@ -210,5 +229,4 @@
     }
   </script>
 </body>
-
 </html>

@@ -7,7 +7,7 @@ function requete_bdd_select($sql){
   // on sélectionne la base
 
   // on envoie la requête
-  $req = mysqli_query(  $db, $sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysqli_error());
+  $req = mysqli_query(  $db, $sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysqli_error($db));
 
   // on ferme la connexion à mysql
   mysqli_close($db);

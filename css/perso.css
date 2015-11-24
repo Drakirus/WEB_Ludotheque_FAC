@@ -100,7 +100,7 @@ nav ul li a:hover {
 /* Cache le panier quand l'utilisateur n'est pas connecté */
 /* -------------------------------------------------------*/
 #logged-title{display:none;}
-#logged-reserver{display:none;}
+.logged-reserver{display:none;}
 
 /* -------------------------------------------------*/
 /* Style pour l'alerte en cas d'erreur lors du login*/
@@ -154,6 +154,9 @@ a.client:hover:after{
 
 .ok {
 	background-color: #28c67a;
+}
+.date {
+	width: 100px;
 }
 /* -------------------------------------------------*/
 /* Animation pop down pour alert*/
