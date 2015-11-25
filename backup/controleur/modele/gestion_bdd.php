@@ -21,4 +21,5 @@ function debut_session($id, $nom) {
         $_SESSION['nom_client'] = $nom;
         $_SESSION['marker'] = true;
 }
+
  ?>

@@ -1,6 +1,6 @@
 <?php
 
-    require('./modele\gestion_bdd.php');
+    require('../modele/gestion_bdd.php');
 
     $login = isset($_POST['login']) ? $_POST['login'] : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
@@ -21,7 +21,7 @@
               header("Location:user_dashboard.php"); // redirection vers user_dashboard.php
               // echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
       } else {
-              echo "<a  id=\"alert\" class=\"alert client\" href=\"./register.php\">Devenez client</a>";
+              echo "<a  id=\"alert\" class=\"alert client\" href=\"./controleur/register.php\">Devenez client</a>";
       }
     } else {                   // affichage des erreurs si le client n'existe pas où si le form est incomplet
         echo "<a  id=\"alert\" class=\"alert\" href=\"#alert\">Formulaire incomplet</a>";

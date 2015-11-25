@@ -5,5 +5,5 @@ if(!isset($_SESSION)){
 unset($_SESSION["nom_client"]); // raz de la session courante
 unset($_SESSION["id_client"]);
 unset($_SESSION["marker"]);
-header("Location:index.php"); // redirection vers la page défaut
+header("Location:../index.php"); // redirection vers la page défaut
 ?>

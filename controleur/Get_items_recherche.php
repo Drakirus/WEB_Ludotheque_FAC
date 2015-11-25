@@ -1,5 +1,5 @@
 <?php
-  require('./modele\gestion_bdd.php');
+  require('../modele/gestion_bdd.php');
 
   $q=$_GET["q"]; // recupération des paramètres (GET)
   $o=$_GET["order"];

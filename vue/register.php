@@ -7,16 +7,14 @@
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/perso.css">
+  <link rel="stylesheet" href="../css/perso.css">
+
 
 </head>
 
@@ -81,7 +79,7 @@ function upload(login, email, password, password_bis) {
     }
   }
 
-  xhr.open("POST", "./new_account.php", true);
+  xhr.open("POST", "../controleur/new_account.php", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=iso-8859-1");
   xhr.send("login=" + escape(login) + "&email=" + escape(email) + "&password=" + escape(password) + "&password_bis=" + escape(password_bis));
 }

@@ -2,7 +2,9 @@
 if(!isset($_SESSION)){
         session_start(); // Ouverture la session si elle n'est pas ouverte
 }
-require('./modele\gestion_bdd.php');
+ob_start();
+require_once $_SERVER['DOCUMENT_ROOT'] . '/WEB_Ludotheque_FAC/modele/gestion_bdd.php';
+ob_end_flush();
 ?>
 <!-- affichage dynamique de la position dans le menu de droite de l'avancement de l'utilisateur  -->
 <style type="text/css">#form{display:none;}#form-title{display:none;}#logged-title{display: block;}.logged-reserver{display: block;}</style>
@@ -12,10 +14,10 @@ require('./modele\gestion_bdd.php');
 <?php
   if($_SESSION["nom_client"]) { // Si l'utilisateur est un petit malin, et qu'il fait appelle à cette page sans étre connecter...
 ?>
-Salut <?php echo $_SESSION["nom_client"]; ?>. <br/><a href="logout.php" tite="Logout">se Déconnecter. </a>
+Salut <?php echo $_SESSION["nom_client"]; ?>. <br/><a href="./controleur/logout.php" tite="Logout">se Déconnecter. </a>
 <?php
   }else {
-    header("Location:index.php"); // BHAM il est rediriger vers la home page
+    header("Location:../index.php"); // BHAM il est rediriger vers la home page
   }
 ?>
 

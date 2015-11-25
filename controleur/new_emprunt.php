@@ -2,7 +2,7 @@
     if(!isset($_SESSION)){
             session_start(); // Ouverture la session si elle n'est pas ouverte
     }
-    require('./modele\gestion_bdd.php');
+    require('../modele/gestion_bdd.php');
 
     /*
     * vérification des différentes variables post ( gestion du isset)

@@ -14,9 +14,7 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/perso.css">
+  <link rel="stylesheet" href="../css/perso.css">
 
 </head>
 
