@@ -25,25 +25,25 @@
     }
 
     if(strlen($password) < 6) { // le mot de passe doit être au minimum de 6 caractères
-      echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Le mots de passe doit être au minimum de 6 caractères</a> </br>";
+      echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Le mot de passe doit contenir au minimum 6 caractères</a> </br>";
       $false = 1;
     }
     if(!$number) { // le mot de passe doit contenir au minimum un chiffre
-      echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Le mots de passe doit être au minimum un chiffre</a> </br>";
+      echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Le mot de passe doit contenir au minimum un chiffre</a> </br>";
       $false = 1;
     }
     if(!$uppercase) { // le mot de passe doit contenir au minimum une lettre majuscule
-      echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Le mots de passe avoir des majuscule </a> </br>";
+      echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Le mot de passe doit contenir au minimum une lettre majuscule </a> </br>";
       $false = 1;
     }
     if ($false){ // Si l'une des différentes erreur c'est produit le script -> return
       die();
     }
     if ($password != $password_bis) { // Si les 2 mots de passe sont différents -> return
-      die("<a  id=\"alert\" class=\"alert\" href=\"#alert\"> Les mots de passe saisis sont différents. veuillez réessayer</a> </br>");
+      die("<a  id=\"alert\" class=\"alert\" href=\"#alert\"> Les mots de passe saisis sont différents. Veuillez réessayer</a> </br>");
     }
 
-    if ( ($login != '')) { // verification si le nom d'utilisateur à été reseigner
+    if ( ($login != '')) { // verification si le nom d'utilisateur à été renseigné
 
       $db = mysqli_connect('localhost', 'root', 'root', "Ludotheque_BD");
       header("Content-Type: application/json; charset=UTF-8");
@@ -62,7 +62,7 @@
       mysqli_close($db);
 
     } else {  //alert
-        echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Besoin d'un Nom d'Utilisateur</a>";
+        echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Besoin d'un nom d'utilisateur</a>";
     }
 
 ?>

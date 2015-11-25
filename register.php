@@ -24,7 +24,7 @@
   <div class="container">
     <div class="row">
       <?php  include './header.php';?>
-      <div class="eleven columns">
+      <div class="eleven col">
         <br/>
         <p>Pour accéder au service de réservation, il faut vous créer un compte </p>
 
@@ -32,7 +32,7 @@
     </div>
     <div class="row">
 
-      <div class="twelve columns border">
+      <div class="twelve col border">
         <h4 id="form-title">Inscription </h4>
         <h4 id="logged-title">Jeux Réservé</h4>
 
@@ -41,21 +41,21 @@
           <form action="" name="connexion" method="post" enctype="multipart/form-data">
             <div class="row" id="form">
 
-              <div class="six columns">
+              <div class="six col">
                 <label>Nom d'Utilisateur</label>
                 <input class="u-full-width" type="text" placeholder="Utilisateur" name="login" />
               </div>
-              <div class="six columns">
+              <div class="six col">
                 <label>Adresse email</label>
                 <input class="u-full-width" type="text" placeholder="Email" name="email" />
               </div>
 
               <div class="row">
-                <div class="six columns">
+                <div class="six col">
                   <label>Mot de passe</label>
                   <input class="u-full-width" type="password" placeholder="********" name="password" />
                 </div>
-                <div class="six columns">
+                <div class="six col">
                   <label>Vérifiez le mot de passe</label>
                   <input class="u-full-width" type="password" placeholder="********" name="password_bis" />
                 </div>
