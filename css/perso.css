@@ -7,51 +7,52 @@ body{
      font-family: "Raleway";
      font-size: 1.5em;
      line-height: 1.5;
-     color: black; 
+     color: black;
 }
 
 h1, h4 {
   margin-top: 0;
   margin-bottom: 2rem;
-  font-weight: 300; 
+  font-weight: 300;
 }
 
-h1 { 
-    font-size: 4.0rem; 
-    line-height: 1.2;  
-    letter-spacing: .1em; 
+h1 {
+    font-size: 4.0rem;
+    line-height: 1.2;
+    letter-spacing: .1em;
     text-align: center;
 }
 
-h4 { 
-    font-size: 2.4rem; 
-    line-height: 1.35; 
+h4 {
+    font-size: 2.4rem;
+    line-height: 1.35;
     letter-spacing: .08em;
 }
 
 
 @media (min-width: 550px) {
-    h1 { 
-        font-size: 5.0rem; 
+    h1 {
+        font-size: 5.0rem;
     }
-    h4 { 
-        font-size: 3.0rem; 
+    h4 {
+        font-size: 3.0rem;
     }
 }
 
 p {
-    margin-top: 0; 
+    margin-top: 0;
 }
 
 ol, ul {
   padding-left: 0;
-  margin-top: 0; 
+  margin-top: 0;
 }
 
 /* -------------------------------------------------*/
 /* Style pour la barre de navigation*/
 /* -------------------------------------------------*/
 nav ul {
+	overflow: hidden;
     width: 80%;
     margin: 0px 10%;
     margin-bottom: 10px;
@@ -97,12 +98,6 @@ nav ul li a:hover {
 /* -------------------------------------------------------*/
 /* Caractéristiques des titres des différents blocs */
 /* -------------------------------------------------------*/
-.col h4 {
-    background-color: rgb(49, 174, 225);
-    color: white;
-    text-align: center;
-    margin: 0;
-}
 
 .container {
   position: relative;
@@ -114,32 +109,40 @@ nav ul li a:hover {
 }
 
 .col {
+
   width: 100%;
   float: left;
-  box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+.col h4 {
+    background-color: rgb(49, 174, 225);
+    color: white;
+    text-align: center;
+    margin: 0;
 }
 
 @media (min-width: 400px) {
     .container {
     width: 85%;
-    padding: 0; 
+    padding: 0;
     }
 }
 
 /* For devices larger than 850px */
-@media (min-width: 850px) {
+@media (min-width: 1050px) {
   .container {
-    width: 90%; 
+    width: 90%;
   }
   .col {
-    margin-left: 4%; 
+    margin-left: 4%;
   }
   .col:first-child {
-    margin-left: 0; 
+    margin-left: 0;
   }
 
   .four.col{
-    width: 30%; 
+    width: 30%;
   }
 
   .six.col{
@@ -204,7 +207,7 @@ input[type="button"] {
   padding: 0 35px;
   color: white;
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: bold;
   letter-spacing: .1em;
   background-color: #31AEE1;
@@ -229,12 +232,12 @@ input[type="text"],
 input[type="password"],
 select {
   height: 40px;
-  padding: 5px 10px; 
+  padding: 5px 10px;
   background-color: white;
   border: 1px solid #D1D1D1;
   border-radius: 6px;
   box-sizing: border-box;
-   -moz-box-sizing: border-box; 
+   -moz-box-sizing: border-box;
 }
 input[type="email"]:focus,
 input[type="search"]:focus,
@@ -263,11 +266,11 @@ td {
   border-bottom: 1px solid #D1D1D1; }
 th:first-child,
 td:first-child {
-  padding-left: 0; 
+  padding-left: 0;
 }
 th:last-child,
 td:last-child {
-  padding-right: 0; 
+  padding-right: 0;
 }
 
 /* ------------*/
@@ -278,14 +281,14 @@ table,
 form,
 ul,
 ol {
-  margin-bottom: 2em; 
+  margin-bottom: 2em;
 }
 button {
-  margin-bottom: 1em; 
+  margin-bottom: 1em;
 }
 input,
 select {
-  margin-bottom: 1.5em; 
+  margin-bottom: 1.5em;
 }
 
 /* ------------*/
@@ -294,12 +297,12 @@ select {
 .u-full-width {
   width: 100%;
   box-sizing: border-box;
--moz-box-sizing: border-box; 
+-moz-box-sizing: border-box;
 }
 .u-max-full-width {
   max-width: 100%;
   box-sizing: border-box;
--moz-box-sizing: border-box; 
+-moz-box-sizing: border-box;
 }
 
 /* -------------------------------------------------------*/

@@ -53,7 +53,7 @@
 
       $sql="SELECT * FROM Paniers WHERE id='$id'";
       $result = requete_bdd_select($sql);
-      if(mysqli_num_rows($result) >= 5){
+      if(mysqli_num_rows($result) >= 3){
         die ("<a  id=\"alert\" class=\"alert\" href=\"#\">5 Jeux max</a>");
       }
 

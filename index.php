@@ -20,8 +20,6 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/perso.css">
 
 
@@ -90,7 +88,7 @@
                 <input class="u-full-width" type="email"  placeholder="Utilisateur" id="login" name="login" />
               </div>
               <div class="six col">
-                <label>Mot de passe</label>
+                <label>Password</label>
                 <input class="u-full-width" type="password" placeholder="********" id="password" name="password" />
               </div>
 
@@ -128,13 +126,12 @@
           arr[i].Type +
           "</td><td>" +
           arr[i].NbJeuxDispos + " / " + arr[i].NbJeux +
-
-          "</td> <td>" +
-          "<a class='logged-reserver' href=\"javascript:NewCal('"+ i+
+           "</td> <td>" +
+          "<a  class='logged-reserver' href=\"javascript:NewCal('"+ i+
           "','ddmmyyyy',true,24)\"> <input class='date' value='Date' id='" +
           i+
           "' type='text'></a>" +
-          "</td><td><input type='button' value='Réservez' class='logged-reserver' href='' name='" + arr[i].Name + "' onclick='reserver(name,"+i+")'> </td> </tr>";
+          "</td><td><input class='logged-reserver'  type='button' value='Réservez' name='" + arr[i].Name + "' onclick='reserver(name,"+i+")'> </td> </tr>";
       }
       // out += "</table>";
       document.getElementById("TABLE").innerHTML = out;
