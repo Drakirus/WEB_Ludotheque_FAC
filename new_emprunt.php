@@ -30,6 +30,7 @@
       // print_r($_SESSION);
       // echo "</pre>";
 
+      // Update de la date d'un jeux déja commander
       if(mysqli_num_rows($result) == 1){
 
 
@@ -50,6 +51,7 @@
 
       }
 
+      // Vérification que le client n'a pas déja rempli sont panier
 
       $sql="SELECT * FROM Paniers WHERE id='$id'";
       $result = requete_bdd_select($sql);
@@ -65,6 +67,7 @@
 
       }
 
+      // Insertion d'un jeux dans le panier du client
       $sql = "INSERT INTO Paniers (id, Nom, creneau) VALUES ('$id', '$item_emp', '$date')";
       $result = requete_bdd_select($sql);
       if($result){

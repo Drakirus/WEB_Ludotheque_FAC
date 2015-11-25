@@ -113,6 +113,8 @@ nav ul li a:hover {
   width: 100%;
   float: left;
   box-sizing: border-box;
+	background-color : white;
+
 }
 
 .col h4 {
@@ -171,14 +173,6 @@ nav ul li a:hover {
 .twelve.col p{
 	text-align : center;
 }
-
-/* -------------------------------------------------------*/
-/* Definit la couleur du contenu des blocs à blanc */
-/* -------------------------------------------------------*/
-.col {
-	background-color : white;
-}
-
 
 
 /* -------------------------------------------------------*/
@@ -368,31 +362,65 @@ a.client:hover:after{
 	width: 100px;
 }
 /* -------------------------------------------------*/
+
+
 /* Animation pop down pour alert*/
+
+
 /* -------------------------------------------------*/
 
 @-webkit-keyframes alert {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { top: 0; }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+  }
 }
 @-moz-keyframes alert {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { top: 0; }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+  }
 }
 @-ms-keyframes alert {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { top: 0; }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+  }
 }
 @-o-keyframes alert {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { top: 0; }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+  }
 }
 @keyframes alert {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { top: 0; }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+  }
 }

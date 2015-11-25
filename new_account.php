@@ -54,7 +54,7 @@
       if(mysqli_num_rows($result) == 1){
         echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Désolé ... Cette email est déjà utilisé...</a>";
       }else{
-        $query = mysqli_query($db, "INSERT INTO members (users, email, password)VALUES ('$login', '$email', '$password')");
+        $query = mysqli_query($db, "INSERT INTO members (users, email, password) VALUES ('$login', '$email', '$password')");
         if($query){
           echo "<a  id=\"alert\" class=\"ok alert\" href=\"./index.php\"> Merci! Vous êtes maintenant inscrit.</a>";
         }
