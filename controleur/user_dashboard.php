@@ -5,6 +5,7 @@ if(!isset($_SESSION)){
 ob_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/WEB_Ludotheque_FAC/modele/gestion_bdd.php';
 ob_end_flush();
+
 ?>
 <!-- affichage dynamique de la position dans le menu de droite de l'avancement de l'utilisateur  -->
 <style type="text/css">#form{display:none;}#form-title{display:none;}#logged-title{display: block;}.logged-reserver{display: block;}</style>
@@ -19,6 +20,7 @@ Salut <?php echo $_SESSION["nom_client"]; ?>. <br/><a href="./controleur/logout.
   }else {
     header("Location:../index.php"); // BHAM il est rediriger vers la home page
   }
+
 ?>
 
 <table class="u-full-width">
@@ -44,8 +46,8 @@ Salut <?php echo $_SESSION["nom_client"]; ?>. <br/><a href="./controleur/logout.
             $outp .= "</td><td>".$data['creneau'];
             $outp .= "</td><tr>";
         }
+          echo ($outp); // on envoie le résulata à la vue
 
-        echo ($outp); // on envoie le résulata à la vue
 
        ?>
 </table>

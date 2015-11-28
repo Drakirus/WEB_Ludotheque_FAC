@@ -14,12 +14,16 @@
       $data  = mysqli_fetch_assoc($req);
 
       if (is_array($data)) {
-              debut_session($data['id'], $data['users']); // creation d'une session
-              // echo "<pre>";
-              // print_r($_SESSION);
-              // echo "</pre>";
-              header("Location:user_dashboard.php"); // redirection vers user_dashboard.php
-              // echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
+
+        debut_session($data['id'], $data['users']); // creation d'une session
+
+        // echo "<pre>";
+        // print_r($_SESSION);
+        // echo "</pre>";
+
+        header("Location:user_dashboard.php"); // redirection vers user_dashboard.php
+
+        // echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
       } else {
               define('URL',dirname(dirname($_SERVER['SCRIPT_NAME'])));
               echo "<a  id=\"alert\" class=\"alert client\" href='" . URL ."/vue/register.php'>Devenez client</a>";

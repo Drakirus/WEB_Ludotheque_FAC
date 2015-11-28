@@ -98,7 +98,9 @@ nav ul li a:hover {
 /* -------------------------------------------------------*/
 /* Caractéristiques des titres des différents blocs */
 /* -------------------------------------------------------*/
-
+.top{
+	margin-top: 10px;
+}
 .container {
   position: relative;
   width: 100%;

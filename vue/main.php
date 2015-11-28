@@ -32,6 +32,7 @@
 
     </div>
   </div>
+
   <div class="four col border">
     <h4 id="form-title" >Connexion </h4>
     <h4 id="logged-title" >Jeux Réservé</h4>
@@ -68,5 +69,30 @@
       <br/>
     </div>
   </div>
-</div>
-</div>
+  </div>
+
+  <div class="four col border top">
+    <h4 >Dernier Jeux </h4>
+    <div class="container-col">
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>Jeux</th>
+            <th>Age</th>
+            <th>Type</th>
+            <th>Restant</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+            include './controleur/Get_last_item.php';
+          ?>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+  </div>
