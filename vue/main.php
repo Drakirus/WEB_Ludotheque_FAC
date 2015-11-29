@@ -75,7 +75,7 @@
   <div class="four col border top">
     <h4 >Dernier Jeux </h4>
     <div class="container-col">
-      <table class="u-full-width">
+      <table>
         <thead>
           <tr>
             <th>Jeux</th>

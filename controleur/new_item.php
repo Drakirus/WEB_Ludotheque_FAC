@@ -1,14 +1,17 @@
 <?php
+ob_start();
+require_once $_SERVER['DOCUMENT_ROOT'] . '/WEB_Ludotheque_FAC/modele/gestion_bdd.php';
+ob_end_flush();
 
 /*
 * vérification des différentes variables post ( gestion du isset)
 */
-$nom = isset($_POST['nom']) ? $_POST['nom'] : '';
+$nom = special_character(isset($_POST['nom']) ? $_POST['nom'] : '');
 $age = isset($_POST['agejeu']) ? $_POST['agejeu'] : '';
-$type = isset($_POST['type']) ? $_POST['type'] : '';
-$summ = isset($_POST['summ']) ? $_POST['summ'] : '';
+$type = special_character(isset($_POST['type']) ? $_POST['type'] : '');
+$summ = special_character(isset($_POST['summ']) ? $_POST['summ'] : '');
 $qt = isset($_POST['qt']) ? $_POST['qt'] : '';
-$image = isset($_POST['image']) ? $_POST['image'] : '';
+$image = special_character(isset($_POST['image']) ? $_POST['image'] : '');
 
 if (!$nom || !$age || !$type || !$summ || !$qt || !$image) {
   echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Erreur remplir formulaire</a>"; // si tout les champs ne sont pas remplis
@@ -16,9 +19,7 @@ if (!$nom || !$age || !$type || !$summ || !$qt || !$image) {
 }
 
 
-ob_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/WEB_Ludotheque_FAC/modele/gestion_bdd.php';
-ob_end_flush();
+
 
 $sql = 'SELECT * FROM Jeux WHERE Nom=\''.$nom.'\'';
 // on envoie la requête

@@ -84,7 +84,7 @@ function reserver(Name, dateID){ // Réservation d'un item
 
   xhr.open("POST", "./controleur/new_emprunt.php", true); // script a utiliser
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=iso-8859-1");
-  xhr.send("item=" + escape(Name)+ "&date=" + x); // envoi de la requette
+  xhr.send("item=" + (Name)+ "&date=" + x); // envoi de la requette
 }
 
 function RechercheItems(theTag, str, order, recherche) { // recherche d'un item

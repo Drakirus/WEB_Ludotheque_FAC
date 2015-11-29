@@ -2,6 +2,14 @@
   if(!isset($_SESSION)){
         session_start();
   }
+
+  if (!isset($_SESSION['id_client'])) {
+    header("Location:index.php");
+  }
+
+  if($_SESSION['id_client'] > 0){
+    header("Location:index.php");
+  }
   ob_start();
   require_once('modele/gestion_bdd.php');
   ob_end_flush();

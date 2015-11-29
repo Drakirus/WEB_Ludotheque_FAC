@@ -1,17 +1,18 @@
 <?php
+ob_start();
+require_once $_SERVER['DOCUMENT_ROOT'] . '/WEB_Ludotheque_FAC/modele/gestion_bdd.php';
+ob_end_flush();
 
 /*
 * vérification des différentes variables post ( gestion du isset)
 */
-$nom = isset($_POST['nom']) ? $_POST['nom'] : '';
+$nom = special_character(isset($_POST['nom']) ? $_POST['nom'] : '');
 
 if (!$nom) {
-  echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Erreur</a>"; // si tout les champs ne sont pas remplis
+  echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Jeux non indiqué</a>"; // si tout les champs ne sont pas remplis
   exit();
 }
-ob_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/WEB_Ludotheque_FAC/modele/gestion_bdd.php';
-ob_end_flush();
+
 
 //creation de la requette
 $sql = 'SELECT * FROM Jeux WHERE Nom=\''.$nom.'\'';
@@ -31,7 +32,5 @@ if ($req == 1) {
   $sql = 'DELETE FROM Jeux_Ludotheque WHERE Nom=\''.$nom.'\'';
   // on envoie la requête
   $req = requete_bdd_select($sql);
-}else {
-  echo "<a  id=\"alert\" class=\"alert\" href=\"#\">Erreur</a>";
 }
  ?>
