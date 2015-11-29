@@ -2,7 +2,7 @@
 function requete_bdd_select($sql){
 
   // on se connecte à MySQL
-  $db = mysqli_connect('localhost', 'root', 'root', "Ludotheque_BD");
+  $db = mysqli_connect('http://danaurea.ddns.net', 'MJBC', 'MDP', "ludotheque_bd");
   mysqli_set_charset($db, "utf8");
   // mysqli_query("SET NAMES UTF8");
   // on sélectionne la base
