@@ -30,6 +30,6 @@ if($_SESSION["id_client"] == $id){
 
 }
 
-header("Location:../index.php");
+echo "ok";
 
  ?>

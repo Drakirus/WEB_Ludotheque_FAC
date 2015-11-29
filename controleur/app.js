@@ -87,6 +87,27 @@ function reserver(Name, dateID){ // Réservation d'un item
   xhr.send("item=" + (Name)+ "&date=" + x); // envoi de la requette
 }
 
+function dell(id,idR,Nom){ // supp d'un item
+  console.log(Nom);
+  // alert(x);
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      reponse = xhr.responseText;
+      if(reponse == "ok"){
+        update_user_dashboard();
+        update();
+      }else{
+      // document.getElementById('message').innerHTML = reponse; // affichage de la réponse
+      }
+    }
+  }
+
+  xhr.open("GET", "./controleur/delete_items.php?id=" + id + "&idR=" + idR + "&Nom=" + Nom + "", true); // script a utiliser
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=iso-8859-1");
+  xhr.send(); // envoi de la requette
+}
+
 function RechercheItems(theTag, str, order, recherche) { // recherche d'un item
 
   // console.log(recherche);

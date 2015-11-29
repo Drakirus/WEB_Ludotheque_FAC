@@ -43,9 +43,9 @@ Salut <?php echo $_SESSION["nom_client"]; ?>. <br/><a href="./controleur/logout.
         while($data = mysqli_fetch_assoc($req)){
             // on affiche les informations de l'enregistrement en cours
 
-            $outp .= "<tr><td>".$data['Nom'];
+            $outp .= "<tr onclick='displayInfo(\"". $data['Nom']."\")' ><td>".$data['Nom'];
             $outp .= "</td><td>".$data['creneau'];
-            $outp .= '</td><td><a href="./controleur/delete_items.php?id='.$_SESSION['id_client'].'&idR='.$data['id_reservation'].'&Nom='.$data['Nom'].'" tite="Logout">X</a>';
+            $outp .= '</td><td><a onclick="dell('.$_SESSION['id_client'].','.$data['id_reservation'].',\''.$data['Nom'].'\')" href="#dell" tite="Logout">X</a>'; //href="./controleur/delete_items.php?id='.$_SESSION['id_client'].'&idR='.$data['id_reservation'].'&Nom='.$data['Nom'].'"
             $outp .= "</td><tr>";
         }
           echo ($outp); // on envoie le résultat à la vue
