@@ -28,13 +28,14 @@ Salut <?php echo $_SESSION["nom_client"]; ?>. <br/><a href="./controleur/logout.
       <tr>
         <th>Jeux</th>
         <th>Date d'emprunt</th>
+        <th></th>
       </tr>
     </thead
     <tr>
       <?php
 
         // on crée la requête SQL
-        $sql = 'SELECT Nom,creneau FROM `Paniers` WHERE id='.$_SESSION['id_client'].'';
+        $sql = 'SELECT Nom,creneau,id_reservation FROM `Paniers` WHERE id='.$_SESSION['id_client'].'';
         // on envoie la requête
         $req = requete_bdd_select($sql);
         // on fait une boucle qui va faire un tour pour chaque enregistrement
@@ -44,6 +45,7 @@ Salut <?php echo $_SESSION["nom_client"]; ?>. <br/><a href="./controleur/logout.
 
             $outp .= "<tr><td>".$data['Nom'];
             $outp .= "</td><td>".$data['creneau'];
+            $outp .= '</td><td><a href="./controleur/delete_items.php?id='.$_SESSION['id_client'].'&idR='.$data['id_reservation'].'&Nom='.$data['Nom'].'" tite="Logout">X</a>';
             $outp .= "</td><tr>";
         }
           echo ($outp); // on envoie le résulata à la vue

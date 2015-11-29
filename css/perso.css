@@ -41,6 +41,7 @@ h4 {
 
 p {
     margin-top: 0;
+		text-align:justify;
 }
 
 ol, ul {
@@ -116,9 +117,9 @@ nav ul li a:hover {
   float: left;
   box-sizing: border-box;
 	background-color : white;
+	margin-bottom: 20px;
 
 }
-
 .col h4 {
     background-color: rgb(49, 174, 225);
     color: white;
@@ -364,11 +365,7 @@ a.client:hover:after{
 	width: 100px;
 }
 /* -------------------------------------------------*/
-
-
 /* Animation pop down pour alert*/
-
-
 /* -------------------------------------------------*/
 
 @-webkit-keyframes alert {

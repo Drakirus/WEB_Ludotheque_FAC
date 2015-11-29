@@ -31,8 +31,7 @@
     <div class="row">
 
       <div class="twelve col border">
-        <h4 id="form-title">Inscription </h4>
-        <h4 id="logged-title">Jeux Réservé</h4>
+        <h4>Inscription </h4>
 
         <div class="container-col">
 
@@ -68,7 +67,7 @@
       </div>
     </div>
   </div>
-<script type="text/javascript">
+<script type="text/javascript"> // creation d'un compte
 function upload(login, email, password, password_bis) {
   // alert (login + ' ' +  email + ' ' +  password + ' ' +  password_bis);
   var xhr = new XMLHttpRequest();

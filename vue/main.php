@@ -15,7 +15,8 @@
         <option value="NbJeuxDispos">Quantité disponibles</option>
       </select>
       <input type="checkbox" id="order" onchange="update()">  Décroissante</input>
-
+      <label>(cliquez pour plus d'info)</label>
+      <br/>
       <table class="u-full-width">
         <thead>
           <tr>
@@ -91,8 +92,5 @@
       </table>
     </div>
   </div>
-
-
-
 
   </div>

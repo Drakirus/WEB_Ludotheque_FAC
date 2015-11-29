@@ -21,6 +21,5 @@
   }
 
   $outp .="</td> </tr>";
-  echo($outp); // on envoie un ficher json que le javascript va afficher
-
+  echo($outp); // on envoi a la vue
 ?>

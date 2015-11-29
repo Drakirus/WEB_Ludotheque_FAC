@@ -6,7 +6,7 @@ function DisplayTab(result) {
   // var out = "<table>";
   var out = "";
   for (i = 0; i < arr.length; i++) {
-    out += "<tr><td>" +
+    out += "<tr  onclick='displayInfo(\""+arr[i].Name+"\")' ><td>" +
       arr[i].Name +
       "</td><td>" +
        arr[i].Ages + "+ " +
@@ -24,6 +24,28 @@ function DisplayTab(result) {
   // out += "</table>";
   document.getElementById("TABLE").innerHTML = out;
 }
+
+
+document.getElementById("INFO_disp").style.display = 'none';
+
+function displayInfo(element){ /// AJAX affiche le les information sur un élément
+  // console.log(recherche);
+  var request = new XMLHttpRequest();
+  request.open('GET', "./controleur/info_item.php?item=" + element, true);
+  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=iso-8859-1");
+  request.onload = function() {
+    if (request.status == 200) {
+      var data = request.responseText;
+      document.getElementById("INFO_disp").style.display = 'inline';
+      document.getElementById('INFO').innerHTML = data;
+
+    }
+  }
+
+  request.send();// envoi de la requette
+
+}
+
 function update_user_dashboard(){ // AJAX affiche le contenu du résultat de la gestion du dashboard de l'utilisateur dans la div "user_dashboard"
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -67,8 +89,9 @@ function reserver(Name, dateID){ // Réservation d'un item
 
 function RechercheItems(theTag, str, order, recherche) { // recherche d'un item
 
-  console.log(recherche);
+  // console.log(recherche);
   var request = new XMLHttpRequest();
+  request.open('GET', "./controleur/Get_items_recherche.php?q=" + str + "&order=" + order + "&recherche=" + recherche, true);
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=iso-8859-1");
   request.onload = function() {
     if (request.status == 200) {

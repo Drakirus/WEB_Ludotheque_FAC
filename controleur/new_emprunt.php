@@ -8,17 +8,23 @@
     * vérification des différentes variables post ( gestion du isset)
     */
     $item_emp = isset($_POST['item']) ? $_POST['item'] : '';
-    $date = isset($_POST['date']) ? $_POST['date'] : '';
+    $date_str = isset($_POST['date']) ? $_POST['date'] : '';
     // $id = isset($_SESSION['id_client']) ? $_SESSION['id_client'] : '';
     $id = $_SESSION['id_client'];
 
-    $date = date( "Y-m-d H:i:s", strtotime($date) );
+    $date = date( "Y-m-d H:i:s", strtotime($date_str) );
     // die("<a  id=\"alert\" class=\"alert\" href=\"#alert\">" .$date. " </a> </br>"); //debug
     /*
     * Affichage d'erreur si les variables ne correspondent pas à un contenus
     */
+
+    //Vérification de la date
+    if(strtotime($date_str) < strtotime('now')) {
+      die("<a  id=\"alert\" class=\"alert\" href=\"#alert\">TARDIS en réparation</a> </br>");
+    }
+
     if(!$item_emp && !$date) {
-      die("<a  id=\"alert\" class=\"alert\" href=\"#alert\"> erreur jeux pas définit </a> </br>");
+      die("<a  id=\"alert\" class=\"alert\" href=\"#alert\"> Erreur jeux pas définit </a> </br>");
     }
    // verification si le nom d'utilisateur à été reseigner
 
