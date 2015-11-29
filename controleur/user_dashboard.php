@@ -11,14 +11,14 @@ ob_end_flush();
 <style type="text/css">#form{display:none;}#form-title{display:none;}#logged-title{display: block;}.logged-reserver{display: block;}</style>
 
 
-<!-- Creation d'une table contenant les information propre à l'utilisateur qui vient de ce connecter  -->
+<!-- Creation d'une table contenant les informations propre à l'utilisateur qui vient de se connecter  -->
 <?php
-  if($_SESSION["nom_client"]) { // Si l'utilisateur est un petit malin, et qu'il fait appelle à cette page sans étre connecter...
+  if($_SESSION["nom_client"]) { // Si l'utilisateur est un petit malin, et qu'il fait appel à cette page sans être connecté...
 ?>
 Salut <?php echo $_SESSION["nom_client"]; ?>. <br/><a href="./controleur/logout.php" tite="Logout">se Déconnecter. </a>
 <?php
   }else {
-    header("Location:../index.php"); // BHAM il est rediriger vers la home page
+    header("Location:../index.php"); // BHAM il est redirigé vers la home page
   }
 
 ?>
@@ -48,7 +48,7 @@ Salut <?php echo $_SESSION["nom_client"]; ?>. <br/><a href="./controleur/logout.
             $outp .= '</td><td><a href="./controleur/delete_items.php?id='.$_SESSION['id_client'].'&idR='.$data['id_reservation'].'&Nom='.$data['Nom'].'" tite="Logout">X</a>';
             $outp .= "</td><tr>";
         }
-          echo ($outp); // on envoie le résulata à la vue
+          echo ($outp); // on envoie le résultat à la vue
 
 
        ?>

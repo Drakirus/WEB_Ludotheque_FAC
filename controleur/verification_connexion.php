@@ -5,7 +5,7 @@
     $login = isset($_POST['login']) ? $_POST['login'] : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-    if ( ($login != '') && ($password != '')) { // code exécuter si le formulaire est bien rempli
+    if ( ($login != '') && ($password != '')) { // code exécuté si le formulaire est bien rempli
 
       // on crée la requête SQL
       $sql = "SELECT * FROM members WHERE email='" . $_POST["login"] . "' and password = '". $_POST["password"]."'";
@@ -28,7 +28,7 @@
               define('URL',dirname(dirname($_SERVER['SCRIPT_NAME'])));
               echo "<a  id=\"alert\" class=\"alert client\" href='" . URL ."/vue/register.php'>Devenez client</a>";
       }
-    } else {                   // affichage des erreurs si le client n'existe pas où si le form est incomplet
+    } else {                   // affichage des erreurs si le client n'existe pas ou si le form est incomplet
         echo "<a  id=\"alert\" class=\"alert\" href=\"#alert\">Formulaire incomplet</a>";
     }
 

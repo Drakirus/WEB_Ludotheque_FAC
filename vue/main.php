@@ -24,7 +24,7 @@
             <th>Age</th>
             <th>Type</th>
             <th>Restant</th>
-            <th class='logged-reserver' >Réservez</th>
+            <th class='logged-reserver' >Réserver</th>
             <th></th>
           </tr>
         </thead>
