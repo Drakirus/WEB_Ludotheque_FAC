@@ -6,9 +6,10 @@
   // on envoie la requête
   $req = requete_bdd_select($sql);
   // echo $sql;
-  $outp = "<tr><td>";
   // on fait une boucle qui va faire un tour pour chaque enregistrement
+  $outp = '';
   while($data = mysqli_fetch_assoc($req)){
+      $outp .= "<tr  onclick='displayInfo(\"". $data['Nom']."\")'  ><td>";
       // on affiche les informations de l'enregistrement en cours
       // $arr = array('Nom' => $data['Nom'], 'Ages' => $data[Ages], 'Type_jeux' => $data['Type_jeux'] );
       // echo json_encode($arr, JSON_UNESCAPED_UNICODE);
