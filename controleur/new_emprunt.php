@@ -20,7 +20,7 @@
     if(!$item_emp && !$date) {
       die("<a  id=\"alert\" class=\"alert\" href=\"#alert\"> erreur jeux pas définit </a> </br>");
     }
-   // verification si le nom d'utilisateur à été reseigner
+   // verification si le nom d'utilisateur à été renseigné
 
 
       $sql="SELECT '$id' FROM Paniers WHERE id='$id' AND Nom='$item_emp'";
@@ -30,7 +30,7 @@
       // print_r($_SESSION);
       // echo "</pre>";
 
-      // Update de la date d'un jeux déja commander
+      // Update de la date d'un jeux déjà commandé
       if(mysqli_num_rows($result) == 1){
 
 
@@ -51,7 +51,7 @@
 
       }
 
-      // Vérification que le client n'a pas déja rempli sont panier
+      // Vérification que le client n'a pas déjà rempli son panier
 
       $sql="SELECT * FROM Paniers WHERE id='$id'";
       $result = requete_bdd_select($sql);
