@@ -133,7 +133,6 @@ nav ul li a:hover {
     }
 }
 
-/* For devices larger than 850px */
 @media (min-width: 1050px) {
   .container {
     width: 90%;
@@ -212,7 +211,8 @@ input[type="button"] {
   border: 1px solid #bbb;
   cursor: pointer;
   box-sizing: border-box;
--moz-box-sizing: border-box; }
+-moz-box-sizing: border-box; 
+}
 .button:hover,
 button:hover,
 input[type="button"]:hover{
@@ -248,7 +248,8 @@ label {
   font-weight: bold;
 }
 input[type="checkbox"] {
-  display: inline; }
+  display: inline; 
+}
 
 
 
@@ -269,9 +270,9 @@ td:last-child {
   padding-right: 0;
 }
 
-/* ------------*/
-/* A commenter */
-/* ------------*/
+/* --------------------------------------------------------------*/
+/* Décale les éléments en dessous des éléments cités ci-dessous  */
+/* --------------------------------------------------------------*/
 p,
 table,
 form,
@@ -287,18 +288,11 @@ select {
   margin-bottom: 1.5em;
 }
 
-/* ------------*/
-/* A commenter */
-/* ------------*/
 .u-full-width {
   width: 100%;
-  box-sizing: border-box;
--moz-box-sizing: border-box;
 }
 .u-max-full-width {
   max-width: 100%;
-  box-sizing: border-box;
--moz-box-sizing: border-box;
 }
 
 /* -------------------------------------------------------*/
@@ -364,11 +358,7 @@ a.client:hover:after{
 	width: 100px;
 }
 /* -------------------------------------------------*/
-
-
 /* Animation pop down pour alert*/
-
-
 /* -------------------------------------------------*/
 
 @-webkit-keyframes alert {
