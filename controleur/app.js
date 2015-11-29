@@ -1,3 +1,4 @@
+// Fonction qui affiche le tableau des items
 function DisplayTab(result) {
   // alert(result);
   var arr = JSON.parse(result);
@@ -23,7 +24,7 @@ function DisplayTab(result) {
   // out += "</table>";
   document.getElementById("TABLE").innerHTML = out;
 }
-function update_user_dashboard(){
+function update_user_dashboard(){ // AJAX affiche le contenu du résultat de la gestion du dashboard de l'utilisateur dans la div "user_dashboard"
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4 && xhr.status == 200) {
@@ -32,12 +33,12 @@ function update_user_dashboard(){
       }
     }
 
-  xhr.open("POST", "./controleur/user_dashboard.php", true);
+  xhr.open("POST", "./controleur/user_dashboard.php", true); // script a utiliser
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=iso-8859-1");
-  xhr.send();
+  xhr.send(); // envoi de la requette
 }
 
-function reserver(Name, dateID){
+function reserver(Name, dateID){ // Réservation d'un item
   console.log(Name);
   var x=document.getElementById(dateID).value;
   if (x == "Date") {
@@ -54,21 +55,20 @@ function reserver(Name, dateID){
         update_user_dashboard();
         update();
       }else{
-      document.getElementById('message').innerHTML = reponse;
+      document.getElementById('message').innerHTML = reponse; // affichage de la réponse
       }
     }
   }
 
-  xhr.open("POST", "./controleur/new_emprunt.php", true);
+  xhr.open("POST", "./controleur/new_emprunt.php", true); // script a utiliser
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=iso-8859-1");
-  xhr.send("item=" + escape(Name)+ "&date=" + x);
+  xhr.send("item=" + escape(Name)+ "&date=" + x); // envoi de la requette
 }
 
-function RechercheItems(theTag, str, order, recherche) {
+function RechercheItems(theTag, str, order, recherche) { // recherche d'un item
 
   console.log(recherche);
   var request = new XMLHttpRequest();
-  request.open('GET', "./controleur/Get_items_recherche.php?q=" + str + "&order=" + order + "&recherche=" + recherche, true);
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=iso-8859-1");
   request.onload = function() {
     if (request.status == 200) {
@@ -78,10 +78,10 @@ function RechercheItems(theTag, str, order, recherche) {
     }
   }
 
-  request.send();
+  request.send();// envoi de la requette
 }
 
-
+// au chargement de la page affichage des item
 var filter = 'Nom';
 var order = ''
 RechercheItems(DisplayTab, filter, order, "");
@@ -97,7 +97,7 @@ function update() {
   }
 }
 
-function verification(login, password) {
+function verification(login, password) { // login
 
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
@@ -107,7 +107,7 @@ function verification(login, password) {
     }
   }
 
-  xhr.open("POST", "./controleur/verification_connexion.php", true);
+  xhr.open("POST", "./controleur/verification_connexion.php", true);// script a utiliser
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=iso-8859-1");
-  xhr.send("login=" + escape(login) + "&password=" + escape(password));
+  xhr.send("login=" + escape(login) + "&password=" + escape(password));// envoi de la requette
 }
