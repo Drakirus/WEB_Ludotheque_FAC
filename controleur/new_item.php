@@ -1,6 +1,6 @@
 <?php
 ob_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/WEB_Ludotheque_FAC/modele/gestion_bdd.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/TP/modele/gestion_bdd.php';
 ob_end_flush();
 
 /*
